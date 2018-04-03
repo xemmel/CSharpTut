@@ -51,4 +51,32 @@ Now, if you try to compile the sample above, you will get the following error
 
 Well, no mentioning of the *IEnumerable interface* what so ever!?
 
+As it turns out, not even the *IEnumerator interface* is needed the following code will work and you will be able to use a *foreach* on the class *IcanDoForeach*
+
+
+```csharp
+    class MyOwnEnumerator
+    {
+        private int counter = 0;
+        public object Current { get
+            {
+                return 17;
+            }
+        }
+        public bool MoveNext()
+        {
+            counter++;
+            return counter <= 5;
+        }
+    }
+    class ICanDoForEach
+    {
+        public MyOwnEnumerator GetEnumerator()
+        {
+            return new MyOwnEnumerator();
+        }
+    }
+
+```
+
 [Back to top](#table-of-content)
