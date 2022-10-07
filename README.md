@@ -87,7 +87,7 @@ As it turns out, not even the *IEnumerator interface* is needed the following co
 
 ## Wrong Encoding
 
-Can change "K\\u00F8ge" / @"K\u00F8ge" to "Køge"
+Can change "K\\\\u00F8ge" / @"K\u00F8ge" to "Køge"
 
 ```csharp
 
